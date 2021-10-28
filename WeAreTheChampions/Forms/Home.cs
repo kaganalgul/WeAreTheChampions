@@ -116,6 +116,8 @@ namespace WeAreTheChampions
         {
             if (dgvKarsilasmalar.SelectedRows.Count == 1)
             {
+                DialogResult result = MessageBox.Show("Seçili karşılaşmayı silmek istediğinize emin misiniz?", "Karşılaşmayı Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No) return;
                 KarsilasmaSil();
             }
             KarsilasmaListele();
@@ -155,6 +157,8 @@ namespace WeAreTheChampions
         {           
             if (dgvOyuncular.SelectedRows.Count == 1)
             {
+                DialogResult result = MessageBox.Show("Seçili oyuncuyu silmek istediğinize emin misiniz?", "Oyuncuyu Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No) return;
                 PlayerDTO playerDTO = (PlayerDTO)dgvOyuncular.SelectedRows[0].DataBoundItem;
                 Player player = db.Players.FirstOrDefault(x => x.Id.Equals(playerDTO.Id));
                 db.Players.Remove(player);
@@ -174,6 +178,8 @@ namespace WeAreTheChampions
         {
             if (dgvRenkler.SelectedRows.Count == 1)
             {
+                DialogResult result = MessageBox.Show("Seçili rengi silmek istediğinize emin misiniz?", "Rengi Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No) return;
                 ColorDTO colorDTO = (ColorDTO)dgvRenkler.SelectedRows[0].DataBoundItem;
                 Models.Color color = db.Colors.FirstOrDefault(x => x.Id.Equals(colorDTO.Id));
                 db.Colors.Remove(color);
@@ -186,6 +192,9 @@ namespace WeAreTheChampions
         {
             if (dgvTakimlar.SelectedRows.Count == 1)
             {
+                DialogResult result = MessageBox.Show("Seçili takımı silmek istediğinize emin misiniz?", "Takımı Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No) return;
+
                 TeamDTO teamDTO = (TeamDTO)dgvTakimlar.SelectedRows[0].DataBoundItem;
                 Team team = db.Teams.FirstOrDefault(x => x.Id.Equals(teamDTO.Id));
 

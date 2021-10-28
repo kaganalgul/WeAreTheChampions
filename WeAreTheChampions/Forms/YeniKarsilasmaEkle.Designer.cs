@@ -36,12 +36,7 @@ namespace WeAreTheChampions
             this.label2 = new System.Windows.Forms.Label();
             this.dtpKarsilasmaEkleTarih = new System.Windows.Forms.DateTimePicker();
             this.btnYeniKarsilasmaEkleIptal = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nud1KarsilasmaEkle = new System.Windows.Forms.NumericUpDown();
-            this.nud2KarsilasmaEkle = new System.Windows.Forms.NumericUpDown();
             this.dtpKarsilasmaEkleSaat = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.nud1KarsilasmaEkle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud2KarsilasmaEkle)).BeginInit();
             this.SuspendLayout();
             // 
             // cbo1TakimEkle
@@ -64,7 +59,7 @@ namespace WeAreTheChampions
             // 
             // btnYeniKarsilasmaEkle
             // 
-            this.btnYeniKarsilasmaEkle.Location = new System.Drawing.Point(9, 150);
+            this.btnYeniKarsilasmaEkle.Location = new System.Drawing.Point(9, 97);
             this.btnYeniKarsilasmaEkle.Name = "btnYeniKarsilasmaEkle";
             this.btnYeniKarsilasmaEkle.Size = new System.Drawing.Size(260, 30);
             this.btnYeniKarsilasmaEkle.TabIndex = 2;
@@ -93,14 +88,14 @@ namespace WeAreTheChampions
             // dtpKarsilasmaEkleTarih
             // 
             this.dtpKarsilasmaEkleTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpKarsilasmaEkleTarih.Location = new System.Drawing.Point(9, 118);
+            this.dtpKarsilasmaEkleTarih.Location = new System.Drawing.Point(9, 65);
             this.dtpKarsilasmaEkleTarih.Name = "dtpKarsilasmaEkleTarih";
             this.dtpKarsilasmaEkleTarih.Size = new System.Drawing.Size(176, 26);
             this.dtpKarsilasmaEkleTarih.TabIndex = 5;
             // 
             // btnYeniKarsilasmaEkleIptal
             // 
-            this.btnYeniKarsilasmaEkleIptal.Location = new System.Drawing.Point(275, 150);
+            this.btnYeniKarsilasmaEkleIptal.Location = new System.Drawing.Point(275, 97);
             this.btnYeniKarsilasmaEkleIptal.Name = "btnYeniKarsilasmaEkleIptal";
             this.btnYeniKarsilasmaEkleIptal.Size = new System.Drawing.Size(92, 30);
             this.btnYeniKarsilasmaEkleIptal.TabIndex = 6;
@@ -108,44 +103,11 @@ namespace WeAreTheChampions
             this.btnYeniKarsilasmaEkleIptal.UseVisualStyleBackColor = true;
             this.btnYeniKarsilasmaEkleIptal.Click += new System.EventHandler(this.btnYeniKarsilasmaEkleIptal_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Skor :";
-            // 
-            // nud1KarsilasmaEkle
-            // 
-            this.nud1KarsilasmaEkle.Location = new System.Drawing.Point(9, 86);
-            this.nud1KarsilasmaEkle.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.nud1KarsilasmaEkle.Name = "nud1KarsilasmaEkle";
-            this.nud1KarsilasmaEkle.Size = new System.Drawing.Size(176, 26);
-            this.nud1KarsilasmaEkle.TabIndex = 10;
-            // 
-            // nud2KarsilasmaEkle
-            // 
-            this.nud2KarsilasmaEkle.Location = new System.Drawing.Point(191, 86);
-            this.nud2KarsilasmaEkle.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.nud2KarsilasmaEkle.Name = "nud2KarsilasmaEkle";
-            this.nud2KarsilasmaEkle.Size = new System.Drawing.Size(176, 26);
-            this.nud2KarsilasmaEkle.TabIndex = 11;
-            // 
             // dtpKarsilasmaEkleSaat
             // 
             this.dtpKarsilasmaEkleSaat.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpKarsilasmaEkleSaat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpKarsilasmaEkleSaat.Location = new System.Drawing.Point(191, 118);
+            this.dtpKarsilasmaEkleSaat.Location = new System.Drawing.Point(191, 65);
             this.dtpKarsilasmaEkleSaat.Name = "dtpKarsilasmaEkleSaat";
             this.dtpKarsilasmaEkleSaat.Size = new System.Drawing.Size(176, 26);
             this.dtpKarsilasmaEkleSaat.TabIndex = 12;
@@ -154,11 +116,8 @@ namespace WeAreTheChampions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 188);
+            this.ClientSize = new System.Drawing.Size(378, 136);
             this.Controls.Add(this.dtpKarsilasmaEkleSaat);
-            this.Controls.Add(this.nud2KarsilasmaEkle);
-            this.Controls.Add(this.nud1KarsilasmaEkle);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnYeniKarsilasmaEkleIptal);
             this.Controls.Add(this.dtpKarsilasmaEkleTarih);
             this.Controls.Add(this.label2);
@@ -167,13 +126,12 @@ namespace WeAreTheChampions
             this.Controls.Add(this.cbo2TakimEkle);
             this.Controls.Add(this.cbo1TakimEkle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "YeniKarsilasmaEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "KarsilasmaEkrani";
-            ((System.ComponentModel.ISupportInitialize)(this.nud1KarsilasmaEkle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud2KarsilasmaEkle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,9 +146,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpKarsilasmaEkleTarih;
         private System.Windows.Forms.Button btnYeniKarsilasmaEkleIptal;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown nud1KarsilasmaEkle;
-        private System.Windows.Forms.NumericUpDown nud2KarsilasmaEkle;
         private System.Windows.Forms.DateTimePicker dtpKarsilasmaEkleSaat;
     }
 }

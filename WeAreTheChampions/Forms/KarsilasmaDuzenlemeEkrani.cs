@@ -33,8 +33,8 @@ namespace WeAreTheChampions
 
         private void Listele()
         {
-            cbo1TakimDuzenle.DataSource = _db.Teams.Select(x => new TeamDTO() { TeamName = x.TeamName }).ToList();
-            cbo2TakimDuzenle.DataSource = _db.Teams.Select(x => new TeamDTO() { TeamName = x.TeamName }).ToList();
+            cbo1TakimDuzenle.DataSource = _db.Teams.Select(x => new TeamDTO() { Id = x.Id ,TeamName = x.TeamName }).ToList();
+            cbo2TakimDuzenle.DataSource = _db.Teams.Select(x => new TeamDTO() { Id = x.Id ,TeamName = x.TeamName }).ToList();
         }
 
         private void btnDuzenlemeEkraniIptal_Click(object sender, EventArgs e)
@@ -47,8 +47,8 @@ namespace WeAreTheChampions
             int score1 = (int)nud1KarsilasmaDuzenle.Value;
             int score2 = (int)nud2KarsilasmaDuzenle.Value;
 
-            int team1 = cbo1TakimDuzenle.SelectedIndex;
-            int team2 = cbo2TakimDuzenle.SelectedIndex;
+            int team1 = (int)cbo1TakimDuzenle.SelectedValue;
+            int team2 = (int)cbo2TakimDuzenle.SelectedValue;
 
             if (team1 == team2)
             {
@@ -56,19 +56,29 @@ namespace WeAreTheChampions
                 return;
             }
 
-            //if (_db.Matches.Any(x => x.MatchTime == dtpTarihDuzenle.Value && x.Team1 == cbo1TakimDuzenle.SelectedItem && x.Team2 == cbo2TakimDuzenle.SelectedItem && x.Score1 == nud1KarsilasmaDuzenle.Value && x.Score2 == nud2KarsilasmaDuzenle.Value))
-            //{
-            //    MessageBox.Show("Bu karşılaşma daha önce kaydedilmiş.");
-            //    return;
-            //}
+            if (score1 > score2)
+            {
+                MacEkle(EnumClass.Result.Team1Kazandi);
+            }
+            else if (score1 < score2)
+            {
+                MacEkle(EnumClass.Result.Team2Kazandi);
+            }
+            else if (score1 == score2)
+            {
+                MacEkle(EnumClass.Result.Berabere);
+            }
+        }
 
+        private void MacEkle(EnumClass.Result result)
+        {
             Match match = _db.Matches.FirstOrDefault(x => x.Id.Equals(_matchDTO.Id));
             match.MatchTime = new DateTime(dtpTarihDuzenle.Value.Year, dtpTarihDuzenle.Value.Month, dtpTarihDuzenle.Value.Day, dtpSaatDuzenle.Value.Hour, dtpSaatDuzenle.Value.Minute, dtpSaatDuzenle.Value.Second);
             match.Score1 = (int)nud1KarsilasmaDuzenle.Value;
             match.Score2 = (int)nud2KarsilasmaDuzenle.Value;
-            match.Team1Id = cbo1TakimDuzenle.SelectedIndex + 1;
-            match.Team2Id = cbo2TakimDuzenle.SelectedIndex + 1;
-
+            match.Team1Id = (int)cbo1TakimDuzenle.SelectedValue;
+            match.Team2Id = (int)cbo2TakimDuzenle.SelectedValue;
+            match.Result = result;
             MessageBox.Show("Karşılaşma başarıyla düzenlenlenip kaydedilmiştir.");
 
             _db.SaveChanges();

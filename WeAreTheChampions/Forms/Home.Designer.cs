@@ -29,6 +29,10 @@ namespace WeAreTheChampions
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.takimlar = new System.Windows.Forms.TabPage();
             this.btnSeciliyiSil = new System.Windows.Forms.Button();
@@ -56,11 +60,11 @@ namespace WeAreTheChampions
             this.btnOyuncuEklemeEkraniAc = new System.Windows.Forms.Button();
             this.dgvOyuncular = new System.Windows.Forms.DataGridView();
             this.tabTakimlar = new System.Windows.Forms.TabPage();
+            this.btnTakimSil = new System.Windows.Forms.Button();
             this.btnTakimOyunculari = new System.Windows.Forms.Button();
             this.btnTakimDuzenleEkraniAc = new System.Windows.Forms.Button();
             this.btnYeniTakimEklemeEkraniAc = new System.Windows.Forms.Button();
             this.dgvTakimlar = new System.Windows.Forms.DataGridView();
-            this.btnTakimSil = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.takimlar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKarsilasmalar)).BeginInit();
@@ -132,8 +136,19 @@ namespace WeAreTheChampions
             // 
             this.dgvKarsilasmalar.AllowUserToAddRows = false;
             this.dgvKarsilasmalar.AllowUserToDeleteRows = false;
+            this.dgvKarsilasmalar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKarsilasmalar.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvKarsilasmalar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvKarsilasmalar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvKarsilasmalar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKarsilasmalar.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKarsilasmalar.Location = new System.Drawing.Point(6, 7);
             this.dgvKarsilasmalar.MultiSelect = false;
             this.dgvKarsilasmalar.Name = "dgvKarsilasmalar";
@@ -204,8 +219,17 @@ namespace WeAreTheChampions
             // 
             this.dgvRenkler.AllowUserToAddRows = false;
             this.dgvRenkler.AllowUserToDeleteRows = false;
+            this.dgvRenkler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRenkler.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvRenkler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRenkler.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRenkler.Location = new System.Drawing.Point(215, 6);
             this.dgvRenkler.MultiSelect = false;
             this.dgvRenkler.Name = "dgvRenkler";
@@ -340,8 +364,17 @@ namespace WeAreTheChampions
             // 
             this.dgvOyuncular.AllowUserToAddRows = false;
             this.dgvOyuncular.AllowUserToDeleteRows = false;
+            this.dgvOyuncular.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOyuncular.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvOyuncular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOyuncular.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOyuncular.Location = new System.Drawing.Point(6, 40);
             this.dgvOyuncular.MultiSelect = false;
             this.dgvOyuncular.Name = "dgvOyuncular";
@@ -364,6 +397,16 @@ namespace WeAreTheChampions
             this.tabTakimlar.TabIndex = 3;
             this.tabTakimlar.Text = "Takımlar";
             this.tabTakimlar.UseVisualStyleBackColor = true;
+            // 
+            // btnTakimSil
+            // 
+            this.btnTakimSil.Location = new System.Drawing.Point(6, 401);
+            this.btnTakimSil.Name = "btnTakimSil";
+            this.btnTakimSil.Size = new System.Drawing.Size(189, 45);
+            this.btnTakimSil.TabIndex = 8;
+            this.btnTakimSil.Text = "Takım Sil";
+            this.btnTakimSil.UseVisualStyleBackColor = true;
+            this.btnTakimSil.Click += new System.EventHandler(this.btnTakimSil_Click);
             // 
             // btnTakimOyunculari
             // 
@@ -399,8 +442,17 @@ namespace WeAreTheChampions
             // 
             this.dgvTakimlar.AllowUserToAddRows = false;
             this.dgvTakimlar.AllowUserToDeleteRows = false;
+            this.dgvTakimlar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTakimlar.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvTakimlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTakimlar.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTakimlar.Location = new System.Drawing.Point(6, 6);
             this.dgvTakimlar.MultiSelect = false;
             this.dgvTakimlar.Name = "dgvTakimlar";
@@ -409,16 +461,6 @@ namespace WeAreTheChampions
             this.dgvTakimlar.Size = new System.Drawing.Size(837, 390);
             this.dgvTakimlar.TabIndex = 0;
             // 
-            // btnTakimSil
-            // 
-            this.btnTakimSil.Location = new System.Drawing.Point(6, 401);
-            this.btnTakimSil.Name = "btnTakimSil";
-            this.btnTakimSil.Size = new System.Drawing.Size(189, 45);
-            this.btnTakimSil.TabIndex = 8;
-            this.btnTakimSil.Text = "Takım Sil";
-            this.btnTakimSil.UseVisualStyleBackColor = true;
-            this.btnTakimSil.Click += new System.EventHandler(this.btnTakimSil_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -426,8 +468,10 @@ namespace WeAreTheChampions
             this.ClientSize = new System.Drawing.Size(881, 507);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "We Are The Champions 1.0";

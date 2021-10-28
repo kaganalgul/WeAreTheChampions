@@ -20,11 +20,10 @@ namespace WeAreTheChampions
         {
             _db = db;
             InitializeComponent();
-            cboTakimRenk.DataSource = _db.Colors.ToList();
+            cboTakimRenk.DataSource = _db.Colors.Select(x => new ColorDTO() { Id = x.Id, ColorName = x.ColorName, Red = x.Red, Green = x.Green, Blue = x.Blue }).ToList();
             cboTakimRenk.DisplayMember = "ColorName";
             cboTakimRenk.ValueMember = "Id";
         }
-
 
         private void btnYeniTakimEkle_Click(object sender, EventArgs e)
         {

@@ -42,8 +42,8 @@ namespace WeAreTheChampions
 
         private void btnYeniKarsilasmaEkle_Click(object sender, EventArgs e)
         {
-            int score1 = (int)nud1KarsilasmaEkle.Value;
-            int score2 = (int)nud2KarsilasmaEkle.Value;
+            //int score1 = (int)nud1KarsilasmaEkle.Value;
+            //int score2 = (int)nud2KarsilasmaEkle.Value;
 
             int team1index = (int)cbo1TakimEkle.SelectedValue;
             int team2index = (int)cbo2TakimEkle.SelectedValue;            
@@ -59,10 +59,9 @@ namespace WeAreTheChampions
 
             Team cbo1Team = _db.Teams.FirstOrDefault(x => x.Id.Equals(cbo1DTO.Id));
             Team cbo2Team = _db.Teams.FirstOrDefault(x => x.Id.Equals(cbo2DTO.Id));
-            // GS-FB 29  19:00
-            // GS  29 1900 maçı varmı 
-            // FB  29 1900
-            if (_db.Matches.Any(x => x.Team1.Id == cbo1Team.Id && x.Team2.Id == cbo2Team.Id ))
+            
+
+            if (_db.Matches.Any(x => x.Team1.Id == cbo1Team.Id && x.Team2.Id == cbo2Team.Id))
             {
                 MessageBox.Show("Bu karşılaşma daha önce kaydedilmiş.");
                 return;
@@ -73,20 +72,10 @@ namespace WeAreTheChampions
 
             TeamDTO teamDTO2 = (TeamDTO)cbo2TakimEkle.SelectedItem;
             Team team2 = _db.Teams.FirstOrDefault(x => x.Id.Equals(teamDTO2.Id));
-           
-            if (score1 > score2)
-            {
-                _db.Matches.Add(new Match() { Team1 = team1, Team2 = team2, Team1Id = cbo1TakimEkle.SelectedIndex + 1, Team2Id = cbo2TakimEkle.SelectedIndex + 1, Score2 = Convert.ToInt32(nud2KarsilasmaEkle.Value), MatchTime = new DateTime(dtpKarsilasmaEkleTarih.Value.Year, dtpKarsilasmaEkleTarih.Value.Month, dtpKarsilasmaEkleTarih.Value.Day, dtpKarsilasmaEkleSaat.Value.Hour, dtpKarsilasmaEkleSaat.Value.Minute, dtpKarsilasmaEkleSaat.Value.Second), Result = EnumClass.Result.Team1Kazandi });
-            }
-            else if (score1 < score2)
-            {
-                _db.Matches.Add(new Match() { Team1 = team1, Team2 = team2, Team1Id = cbo1TakimEkle.SelectedIndex + 1, Team2Id = cbo2TakimEkle.SelectedIndex + 1, Score1 = Convert.ToInt32(nud1KarsilasmaEkle.Value), Score2 = Convert.ToInt32(nud2KarsilasmaEkle.Value), MatchTime = new DateTime(dtpKarsilasmaEkleTarih.Value.Year, dtpKarsilasmaEkleTarih.Value.Month, dtpKarsilasmaEkleTarih.Value.Day, dtpKarsilasmaEkleSaat.Value.Hour, dtpKarsilasmaEkleSaat.Value.Minute, dtpKarsilasmaEkleSaat.Value.Second), Result = EnumClass.Result.Team2Kazandi });
-            }
-            else if ( score1 == score2 )
-            {
-                _db.Matches.Add(new Match() { Team1 = team1, Team2 = team2, Team1Id = cbo1TakimEkle.SelectedIndex + 1, Team2Id = cbo2TakimEkle.SelectedIndex + 1, Score1 = Convert.ToInt32(nud1KarsilasmaEkle.Value), Score2 = Convert.ToInt32(nud2KarsilasmaEkle.Value), MatchTime = new DateTime(dtpKarsilasmaEkleTarih.Value.Year, dtpKarsilasmaEkleTarih.Value.Month, dtpKarsilasmaEkleTarih.Value.Day, dtpKarsilasmaEkleSaat.Value.Hour, dtpKarsilasmaEkleSaat.Value.Minute, dtpKarsilasmaEkleSaat.Value.Second), Result = EnumClass.Result.Berabere });
-            }
 
+            // İlk defa girilen karşılaşmalara skor girilemez. Skor düzenleme ekranında düzenlenebilir.
+            _db.Matches.Add(new Match() { Team1 = team1, Team2 = team2, Team1Id = (int)cbo1TakimEkle.SelectedValue, Team2Id = (int)cbo2TakimEkle.SelectedValue, MatchTime = new DateTime(dtpKarsilasmaEkleTarih.Value.Year, dtpKarsilasmaEkleTarih.Value.Month, dtpKarsilasmaEkleTarih.Value.Day, dtpKarsilasmaEkleSaat.Value.Hour, dtpKarsilasmaEkleSaat.Value.Minute, dtpKarsilasmaEkleSaat.Value.Second) });
+            
             MessageBox.Show("Karşılaşma başarıyla kaydolmuştur.");
 
             _db.SaveChanges();
