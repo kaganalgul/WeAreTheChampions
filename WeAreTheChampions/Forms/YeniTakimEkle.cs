@@ -20,9 +20,15 @@ namespace WeAreTheChampions
         {
             _db = db;
             InitializeComponent();
-            cboTakimRenk.DataSource = _db.Colors.Select(x => new ColorDTO() { Id = x.Id, ColorName = x.ColorName, Red = x.Red, Green = x.Green, Blue = x.Blue }).ToList();
-            cboTakimRenk.DisplayMember = "ColorName";
-            cboTakimRenk.ValueMember = "Id";
+            chkListRenkler.DataSource = _db.Colors.ToList();
+            chkListRenkler.DisplayMember = "ColorName";
+            chkListRenkler.ValueMember = "Id";
+
+            
+            
+            //cboTakimRenk.DisplayMember = "ColorName";
+            //cboTakimRenk.ValueMember = "Id";
+            
         }
 
         private void btnYeniTakimEkle_Click(object sender, EventArgs e)
@@ -32,10 +38,25 @@ namespace WeAreTheChampions
                 MessageBox.Show("Bu takım daha önce kaydedilmiş");
                 return;
             }
-            Models.Color color = (Models.Color)cboTakimRenk.SelectedItem;
-            _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text});
-            _db.SaveChanges();
-            Close();
+
+            if (chkListRenkler.CheckedItems.Count == 0)
+            {
+                _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text });
+                _db.SaveChanges();
+                Close();
+            }
+
+            else
+            {                
+                List<TeamColor> teamColorsList = new List<TeamColor>();                
+                for (int i = 0; i < chkListRenkler.CheckedItems.Count; i++)
+                {
+                    _db.TeamColors.Add(new TeamColor() { ColorId = chkListRenkler.CheckedIndices[i], Team = new Team() { TeamName = txtTakimIsmi.Text } });
+                }
+                _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text, TeamColors = teamColorsList });
+                _db.SaveChanges();
+                Close();
+            }                       
         }
         
         private void btnYeniTakimEkleIptal_Click(object sender, EventArgs e)
