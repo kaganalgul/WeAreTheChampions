@@ -49,7 +49,6 @@ namespace WeAreTheChampions
                     _db.Players.Add(new Player()
                     {
                         PlayerName = txtOyuncuIsim.Text,
-                        TeamId = (int)cboOyuncuEkleTakim.SelectedValue,
                         Team = team
                     });
                 }
