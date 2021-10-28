@@ -23,6 +23,7 @@ namespace WeAreTheChampions
             cboOyuncuEkleTakim.ValueMember = "Id";
             cboOyuncuEkleTakim.DisplayMember = "TeamName";
             cboOyuncuEkleTakim.DataSource = _db.Teams.Select(x => new TeamDTO() { Id = x.Id, TeamName = x.TeamName }).ToList();
+            cboOyuncuEkleTakim.Enabled = false;
         }
 
         private void btnYeniOyuncuEkleIptal_Click(object sender, EventArgs e)
@@ -40,17 +41,37 @@ namespace WeAreTheChampions
             {
                 TeamDTO teamDTO = (TeamDTO)cboOyuncuEkleTakim.SelectedItem;
                 Team team = _db.Teams.FirstOrDefault(x => x.Id.Equals(teamDTO.Id));
-                _db.Players.Add(new Player()
-                {
-                    PlayerName = txtOyuncuIsim.Text,
-                    TeamId = (int)cboOyuncuEkleTakim.SelectedValue,
-                    Team = team
-                });
 
+                // Eklenen oyununcunun takımının belli olup olmadığı check box ile kontrol edilir.
+
+                if (chkTakimVar.Checked == true)
+                {
+                    _db.Players.Add(new Player()
+                    {
+                        PlayerName = txtOyuncuIsim.Text,
+                        TeamId = (int)cboOyuncuEkleTakim.SelectedValue,
+                        Team = team
+                    });
+                }
+                else
+                {
+                    _db.Players.Add(new Player()
+                    {
+                        PlayerName = txtOyuncuIsim.Text,
+                    });
+                }
                 _db.SaveChanges();
+
                 Close();
             }
-            
+
+        }
+        private void chkTakimVar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTakimVar.Checked == true)
+            {
+                cboOyuncuEkleTakim.Enabled = true;
+            }
         }
     }
 }

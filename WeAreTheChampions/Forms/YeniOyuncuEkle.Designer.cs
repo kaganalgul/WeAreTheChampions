@@ -35,6 +35,7 @@ namespace WeAreTheChampions
             this.label3 = new System.Windows.Forms.Label();
             this.btnYeniOyuncuEkle = new System.Windows.Forms.Button();
             this.btnYeniOyuncuEkleIptal = new System.Windows.Forms.Button();
+            this.chkTakimVar = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@ namespace WeAreTheChampions
             // cboOyuncuEkleTakim
             // 
             this.cboOyuncuEkleTakim.FormattingEnabled = true;
-            this.cboOyuncuEkleTakim.Location = new System.Drawing.Point(78, 69);
+            this.cboOyuncuEkleTakim.Location = new System.Drawing.Point(78, 93);
             this.cboOyuncuEkleTakim.Name = "cboOyuncuEkleTakim";
             this.cboOyuncuEkleTakim.Size = new System.Drawing.Size(261, 28);
             this.cboOyuncuEkleTakim.TabIndex = 4;
@@ -64,7 +65,7 @@ namespace WeAreTheChampions
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 72);
+            this.label3.Location = new System.Drawing.Point(6, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 20);
             this.label3.TabIndex = 5;
@@ -72,7 +73,7 @@ namespace WeAreTheChampions
             // 
             // btnYeniOyuncuEkle
             // 
-            this.btnYeniOyuncuEkle.Location = new System.Drawing.Point(10, 103);
+            this.btnYeniOyuncuEkle.Location = new System.Drawing.Point(10, 127);
             this.btnYeniOyuncuEkle.Name = "btnYeniOyuncuEkle";
             this.btnYeniOyuncuEkle.Size = new System.Drawing.Size(220, 36);
             this.btnYeniOyuncuEkle.TabIndex = 6;
@@ -82,7 +83,7 @@ namespace WeAreTheChampions
             // 
             // btnYeniOyuncuEkleIptal
             // 
-            this.btnYeniOyuncuEkleIptal.Location = new System.Drawing.Point(236, 103);
+            this.btnYeniOyuncuEkleIptal.Location = new System.Drawing.Point(236, 127);
             this.btnYeniOyuncuEkleIptal.Name = "btnYeniOyuncuEkleIptal";
             this.btnYeniOyuncuEkleIptal.Size = new System.Drawing.Size(103, 36);
             this.btnYeniOyuncuEkleIptal.TabIndex = 7;
@@ -90,11 +91,23 @@ namespace WeAreTheChampions
             this.btnYeniOyuncuEkleIptal.UseVisualStyleBackColor = true;
             this.btnYeniOyuncuEkleIptal.Click += new System.EventHandler(this.btnYeniOyuncuEkleIptal_Click);
             // 
+            // chkTakimVar
+            // 
+            this.chkTakimVar.AutoSize = true;
+            this.chkTakimVar.Location = new System.Drawing.Point(10, 64);
+            this.chkTakimVar.Name = "chkTakimVar";
+            this.chkTakimVar.Size = new System.Drawing.Size(207, 24);
+            this.chkTakimVar.TabIndex = 8;
+            this.chkTakimVar.Text = "Oyuncunun Takımı Var";
+            this.chkTakimVar.UseVisualStyleBackColor = true;
+            this.chkTakimVar.CheckedChanged += new System.EventHandler(this.chkTakimVar_CheckedChanged);
+            // 
             // YeniOyuncuEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 146);
+            this.ClientSize = new System.Drawing.Size(347, 172);
+            this.Controls.Add(this.chkTakimVar);
             this.Controls.Add(this.btnYeniOyuncuEkleIptal);
             this.Controls.Add(this.btnYeniOyuncuEkle);
             this.Controls.Add(this.label3);
@@ -121,5 +134,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnYeniOyuncuEkle;
         private System.Windows.Forms.Button btnYeniOyuncuEkleIptal;
+        private System.Windows.Forms.CheckBox chkTakimVar;
     }
 }
