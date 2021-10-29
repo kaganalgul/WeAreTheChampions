@@ -95,12 +95,6 @@
     <Compile Include="Forms\TakimDuzenle.Designer.cs">
       <DependentUpon>TakimDuzenle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TakimOyunculari.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TakimOyunculari.Designer.cs">
-      <DependentUpon>TakimOyunculari.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\YeniKarsilasmaEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TakimDuzenle.resx">
       <DependentUpon>TakimDuzenle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TakimOyunculari.resx">
-      <DependentUpon>TakimOyunculari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\YeniKarsilasmaEkle.resx">
       <DependentUpon>YeniKarsilasmaEkle.cs</DependentUpon>

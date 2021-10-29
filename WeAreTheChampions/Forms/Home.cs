@@ -90,12 +90,6 @@ namespace WeAreTheChampions
             takimDuzenle.FormDuzenle(dgvTakimlar); //Listeden öğe seçilip seçilmediği extension method ile kontrol edilmiştir.
         }
 
-        private void btnTakimOyunculari_Click(object sender, EventArgs e)
-        {
-            TakimOyunculari takimOyunculari = new TakimOyunculari(db);
-            takimOyunculari.FormDuzenle(dgvTakimlar); //Listeden öğe seçilip seçilmediği extension method ile kontrol edilmiştir.
-        }
-
         private void btnOyuncuDuzenle_Click(object sender, EventArgs e)
         {
             PlayerDTO playerDTO = (PlayerDTO)dgvOyuncular.SelectedRows[0].DataBoundItem;
@@ -169,7 +163,7 @@ namespace WeAreTheChampions
 
         private void btnRenkEkle_Click(object sender, EventArgs e)
         {
-            db.Colors.Add( new Models.Color() { ColorName = txtRenkAdi.Text, Blue = Convert.ToInt32(txtMavi.Text), Green = Convert.ToInt32(txtYesil.Text), Red = Convert.ToInt32(txtKirmizi.Text) });
+            db.Colors.Add(new Models.Color() { ColorName = txtRenkAdi.Text, Blue = Convert.ToInt32(txtMavi.Text), Green = Convert.ToInt32(txtYesil.Text), Red = Convert.ToInt32(txtKirmizi.Text) });     
             db.SaveChanges();
             RenkListele();
         }
@@ -200,6 +194,7 @@ namespace WeAreTheChampions
 
                 db.Teams.Remove(team);
                 db.SaveChanges();
+                KarsilasmaListele();
                 TakimListele();
             }
         }

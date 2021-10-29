@@ -35,11 +35,12 @@ namespace WeAreTheChampions
             this.cboOyuncuDuzenleTakim = new System.Windows.Forms.ComboBox();
             this.txtOyuncuDuzenleIsim = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.chkOyuncuDuzenleTakimVar = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnYeniOyuncuEkleIptal
             // 
-            this.btnYeniOyuncuEkleIptal.Location = new System.Drawing.Point(236, 100);
+            this.btnYeniOyuncuEkleIptal.Location = new System.Drawing.Point(236, 125);
             this.btnYeniOyuncuEkleIptal.Name = "btnYeniOyuncuEkleIptal";
             this.btnYeniOyuncuEkleIptal.Size = new System.Drawing.Size(103, 36);
             this.btnYeniOyuncuEkleIptal.TabIndex = 15;
@@ -49,7 +50,7 @@ namespace WeAreTheChampions
             // 
             // btnOyuncuDuzenleOnay
             // 
-            this.btnOyuncuDuzenleOnay.Location = new System.Drawing.Point(10, 100);
+            this.btnOyuncuDuzenleOnay.Location = new System.Drawing.Point(10, 125);
             this.btnOyuncuDuzenleOnay.Name = "btnOyuncuDuzenleOnay";
             this.btnOyuncuDuzenleOnay.Size = new System.Drawing.Size(220, 36);
             this.btnOyuncuDuzenleOnay.TabIndex = 14;
@@ -60,7 +61,7 @@ namespace WeAreTheChampions
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 69);
+            this.label3.Location = new System.Drawing.Point(6, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 20);
             this.label3.TabIndex = 13;
@@ -69,7 +70,7 @@ namespace WeAreTheChampions
             // cboOyuncuDuzenleTakim
             // 
             this.cboOyuncuDuzenleTakim.FormattingEnabled = true;
-            this.cboOyuncuDuzenleTakim.Location = new System.Drawing.Point(78, 66);
+            this.cboOyuncuDuzenleTakim.Location = new System.Drawing.Point(78, 91);
             this.cboOyuncuDuzenleTakim.Name = "cboOyuncuDuzenleTakim";
             this.cboOyuncuDuzenleTakim.Size = new System.Drawing.Size(261, 28);
             this.cboOyuncuDuzenleTakim.TabIndex = 12;
@@ -90,11 +91,23 @@ namespace WeAreTheChampions
             this.label1.TabIndex = 8;
             this.label1.Text = "İsim :";
             // 
+            // chkOyuncuDuzenleTakimVar
+            // 
+            this.chkOyuncuDuzenleTakimVar.AutoSize = true;
+            this.chkOyuncuDuzenleTakimVar.Location = new System.Drawing.Point(12, 62);
+            this.chkOyuncuDuzenleTakimVar.Name = "chkOyuncuDuzenleTakimVar";
+            this.chkOyuncuDuzenleTakimVar.Size = new System.Drawing.Size(207, 24);
+            this.chkOyuncuDuzenleTakimVar.TabIndex = 16;
+            this.chkOyuncuDuzenleTakimVar.Text = "Oyuncunun Takımı Var";
+            this.chkOyuncuDuzenleTakimVar.UseVisualStyleBackColor = true;
+            this.chkOyuncuDuzenleTakimVar.CheckedChanged += new System.EventHandler(this.chkOyuncuDuzenleTakimVar_CheckedChanged);
+            // 
             // OyuncuDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 145);
+            this.ClientSize = new System.Drawing.Size(349, 184);
+            this.Controls.Add(this.chkOyuncuDuzenleTakimVar);
             this.Controls.Add(this.btnYeniOyuncuEkleIptal);
             this.Controls.Add(this.btnOyuncuDuzenleOnay);
             this.Controls.Add(this.label3);
@@ -121,5 +134,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.ComboBox cboOyuncuDuzenleTakim;
         private System.Windows.Forms.TextBox txtOyuncuDuzenleIsim;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkOyuncuDuzenleTakimVar;
     }
 }

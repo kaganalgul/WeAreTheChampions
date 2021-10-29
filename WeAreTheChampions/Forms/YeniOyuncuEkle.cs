@@ -28,48 +28,44 @@ namespace WeAreTheChampions
 
         private void btnYeniOyuncuEkleIptal_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnYeniOyuncuEkle_Click(object sender, EventArgs e)
         {
-            if (_db.Players.Any(x => x.PlayerName == txtOyuncuIsim.Text && x.TeamId == (int)cboOyuncuEkleTakim.SelectedValue))
+            TeamDTO teamDTO = (TeamDTO)cboOyuncuEkleTakim.SelectedItem;
+            Team team = _db.Teams.FirstOrDefault(x => x.Id.Equals(teamDTO.Id));
+
+            // Eklenen oyununcunun takımının belli olup olmadığı check box ile kontrol edilir.
+
+            if (chkTakimVar.Checked == true)
             {
-                MessageBox.Show("Bu oyuncu daha önce kaydedilmiş.");
+                _db.Players.Add(new Player()
+                {
+                    PlayerName = txtOyuncuIsim.Text,
+                    Team = team
+                });
             }
             else
             {
-                TeamDTO teamDTO = (TeamDTO)cboOyuncuEkleTakim.SelectedItem;
-                Team team = _db.Teams.FirstOrDefault(x => x.Id.Equals(teamDTO.Id));
-
-                // Eklenen oyununcunun takımının belli olup olmadığı check box ile kontrol edilir.
-
-                if (chkTakimVar.Checked == true)
+                _db.Players.Add(new Player()
                 {
-                    _db.Players.Add(new Player()
-                    {
-                        PlayerName = txtOyuncuIsim.Text,
-                        Team = team
-                    });
-                }
-                else
-                {
-                    _db.Players.Add(new Player()
-                    {
-                        PlayerName = txtOyuncuIsim.Text,
-                    });
-                }
-                _db.SaveChanges();
-
-                Close();
+                    PlayerName = txtOyuncuIsim.Text,
+                });
             }
+            _db.SaveChanges();
 
+            Close();
         }
         private void chkTakimVar_CheckedChanged(object sender, EventArgs e)
         {
             if (chkTakimVar.Checked == true)
             {
                 cboOyuncuEkleTakim.Enabled = true;
+            }
+            else
+            {
+                cboOyuncuEkleTakim.Enabled = false;
             }
         }
     }

@@ -16,19 +16,16 @@ namespace WeAreTheChampions
     public partial class YeniTakimEkle : Form
     {
         readonly DatabaseContext _db;
+        List<TeamColor> teamColorsList = new List<TeamColor>();
+
         public YeniTakimEkle(DatabaseContext db)
         {
             _db = db;
             InitializeComponent();
-            chkListRenkler.DataSource = _db.Colors.ToList();
+            chkListRenkler.DataSource = _db.Colors.Select(x => new TeamColorDTO() { ColorId = x.Id, ColorName = x.ColorName }).ToList();
             chkListRenkler.DisplayMember = "ColorName";
             chkListRenkler.ValueMember = "Id";
 
-            
-            
-            //cboTakimRenk.DisplayMember = "ColorName";
-            //cboTakimRenk.ValueMember = "Id";
-            
         }
 
         private void btnYeniTakimEkle_Click(object sender, EventArgs e)
@@ -47,21 +44,27 @@ namespace WeAreTheChampions
             }
 
             else
-            {                
-                List<TeamColor> teamColorsList = new List<TeamColor>();                
-                for (int i = 0; i < chkListRenkler.CheckedItems.Count; i++)
-                {
-                    _db.TeamColors.Add(new TeamColor() { ColorId = chkListRenkler.CheckedIndices[i], Team = new Team() { TeamName = txtTakimIsmi.Text } });
-                }
+            {
                 _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text, TeamColors = teamColorsList });
                 _db.SaveChanges();
                 Close();
-            }                       
+            }
         }
-        
+
         private void btnYeniTakimEkleIptal_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void chkListRenkler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TeamColorDTO teamColorDTO = (TeamColorDTO)chkListRenkler.SelectedItem;
+            TeamColor teamColor = _db.TeamColors.FirstOrDefault(x => x.ColorId.Equals(teamColorDTO.ColorId));
+            teamColorsList.Add(teamColor);
+            if (chkListRenkler.CheckedItems.Count != 0)
+            {
+                _db.TeamColors.Add(teamColor);
+            }
         }
     }
 }

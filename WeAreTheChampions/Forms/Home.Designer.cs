@@ -61,7 +61,6 @@ namespace WeAreTheChampions
             this.dgvOyuncular = new System.Windows.Forms.DataGridView();
             this.tabTakimlar = new System.Windows.Forms.TabPage();
             this.btnTakimSil = new System.Windows.Forms.Button();
-            this.btnTakimOyunculari = new System.Windows.Forms.Button();
             this.btnTakimDuzenleEkraniAc = new System.Windows.Forms.Button();
             this.btnYeniTakimEklemeEkraniAc = new System.Windows.Forms.Button();
             this.dgvTakimlar = new System.Windows.Forms.DataGridView();
@@ -386,7 +385,6 @@ namespace WeAreTheChampions
             // tabTakimlar
             // 
             this.tabTakimlar.Controls.Add(this.btnTakimSil);
-            this.tabTakimlar.Controls.Add(this.btnTakimOyunculari);
             this.tabTakimlar.Controls.Add(this.btnTakimDuzenleEkraniAc);
             this.tabTakimlar.Controls.Add(this.btnYeniTakimEklemeEkraniAc);
             this.tabTakimlar.Controls.Add(this.dgvTakimlar);
@@ -400,23 +398,13 @@ namespace WeAreTheChampions
             // 
             // btnTakimSil
             // 
-            this.btnTakimSil.Location = new System.Drawing.Point(6, 401);
+            this.btnTakimSil.Location = new System.Drawing.Point(222, 401);
             this.btnTakimSil.Name = "btnTakimSil";
             this.btnTakimSil.Size = new System.Drawing.Size(189, 45);
             this.btnTakimSil.TabIndex = 8;
             this.btnTakimSil.Text = "Takım Sil";
             this.btnTakimSil.UseVisualStyleBackColor = true;
             this.btnTakimSil.Click += new System.EventHandler(this.btnTakimSil_Click);
-            // 
-            // btnTakimOyunculari
-            // 
-            this.btnTakimOyunculari.Location = new System.Drawing.Point(201, 401);
-            this.btnTakimOyunculari.Name = "btnTakimOyunculari";
-            this.btnTakimOyunculari.Size = new System.Drawing.Size(210, 45);
-            this.btnTakimOyunculari.TabIndex = 7;
-            this.btnTakimOyunculari.Text = "Takım Oyuncuları";
-            this.btnTakimOyunculari.UseVisualStyleBackColor = true;
-            this.btnTakimOyunculari.Click += new System.EventHandler(this.btnTakimOyunculari_Click);
             // 
             // btnTakimDuzenleEkraniAc
             // 
@@ -516,7 +504,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRenkAdi;
         private System.Windows.Forms.Button btnTakimDuzenleEkraniAc;
-        private System.Windows.Forms.Button btnTakimOyunculari;
         private System.Windows.Forms.Button btnOyuncuSil;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboOyuncuListeleTakim;

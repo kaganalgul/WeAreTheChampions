@@ -86,11 +86,13 @@ namespace WeAreTheChampions
             // 
             // chkListRenkler
             // 
+            this.chkListRenkler.CheckOnClick = true;
             this.chkListRenkler.FormattingEnabled = true;
             this.chkListRenkler.Location = new System.Drawing.Point(18, 103);
             this.chkListRenkler.Name = "chkListRenkler";
             this.chkListRenkler.Size = new System.Drawing.Size(335, 235);
             this.chkListRenkler.TabIndex = 8;
+            this.chkListRenkler.SelectedIndexChanged += new System.EventHandler(this.chkListRenkler_SelectedIndexChanged);
             // 
             // YeniTakimEkle
             // 
