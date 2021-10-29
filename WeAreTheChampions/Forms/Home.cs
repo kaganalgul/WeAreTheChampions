@@ -86,8 +86,11 @@ namespace WeAreTheChampions
 
         private void btnTakımDuzenleEkraniAc_Click(object sender, EventArgs e)
         {
-            TakimDuzenle takimDuzenle = new TakimDuzenle(db);
+            TeamDTO teamDTO = (TeamDTO)dgvTakimlar.SelectedRows[0].DataBoundItem;
+            Team team = db.Teams.FirstOrDefault(x => x.Id.Equals(teamDTO.Id));
+            TakimDuzenle takimDuzenle = new TakimDuzenle(db, team);
             takimDuzenle.FormDuzenle(dgvTakimlar); //Listeden öğe seçilip seçilmediği extension method ile kontrol edilmiştir.
+            TakimListele();
         }
 
         private void btnOyuncuDuzenle_Click(object sender, EventArgs e)

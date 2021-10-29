@@ -30,29 +30,21 @@ namespace WeAreTheChampions
         private void InitializeComponent()
         {
             this.btnYeniTakimEkleIptal = new System.Windows.Forms.Button();
-            this.cboTakimRenkDuzenle = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTakimDuzenle = new System.Windows.Forms.Button();
             this.txtTakimIsmiDuzenle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.chkTakimDuzenleRenk = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // btnYeniTakimEkleIptal
             // 
-            this.btnYeniTakimEkleIptal.Location = new System.Drawing.Point(231, 114);
+            this.btnYeniTakimEkleIptal.Location = new System.Drawing.Point(231, 304);
             this.btnYeniTakimEkleIptal.Name = "btnYeniTakimEkleIptal";
             this.btnYeniTakimEkleIptal.Size = new System.Drawing.Size(117, 30);
             this.btnYeniTakimEkleIptal.TabIndex = 11;
             this.btnYeniTakimEkleIptal.Text = "İptal";
             this.btnYeniTakimEkleIptal.UseVisualStyleBackColor = true;
-            // 
-            // cboTakimRenkDuzenle
-            // 
-            this.cboTakimRenkDuzenle.FormattingEnabled = true;
-            this.cboTakimRenkDuzenle.Location = new System.Drawing.Point(12, 80);
-            this.cboTakimRenkDuzenle.Name = "cboTakimRenkDuzenle";
-            this.cboTakimRenkDuzenle.Size = new System.Drawing.Size(336, 28);
-            this.cboTakimRenkDuzenle.TabIndex = 10;
             // 
             // label2
             // 
@@ -66,12 +58,13 @@ namespace WeAreTheChampions
             // 
             // btnTakimDuzenle
             // 
-            this.btnTakimDuzenle.Location = new System.Drawing.Point(12, 114);
+            this.btnTakimDuzenle.Location = new System.Drawing.Point(12, 304);
             this.btnTakimDuzenle.Name = "btnTakimDuzenle";
             this.btnTakimDuzenle.Size = new System.Drawing.Size(213, 30);
             this.btnTakimDuzenle.TabIndex = 8;
             this.btnTakimDuzenle.Text = "Takımı Düzenle";
             this.btnTakimDuzenle.UseVisualStyleBackColor = true;
+            this.btnTakimDuzenle.Click += new System.EventHandler(this.btnTakimDuzenle_Click);
             // 
             // txtTakimIsmiDuzenle
             // 
@@ -90,13 +83,21 @@ namespace WeAreTheChampions
             this.label1.TabIndex = 6;
             this.label1.Text = "Takım İsmi :";
             // 
+            // chkTakimDuzenleRenk
+            // 
+            this.chkTakimDuzenleRenk.FormattingEnabled = true;
+            this.chkTakimDuzenleRenk.Location = new System.Drawing.Point(12, 80);
+            this.chkTakimDuzenleRenk.Name = "chkTakimDuzenleRenk";
+            this.chkTakimDuzenleRenk.Size = new System.Drawing.Size(336, 214);
+            this.chkTakimDuzenleRenk.TabIndex = 12;
+            // 
             // TakimDuzenle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 151);
+            this.ClientSize = new System.Drawing.Size(359, 344);
+            this.Controls.Add(this.chkTakimDuzenleRenk);
             this.Controls.Add(this.btnYeniTakimEkleIptal);
-            this.Controls.Add(this.cboTakimRenkDuzenle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTakimDuzenle);
             this.Controls.Add(this.txtTakimIsmiDuzenle);
@@ -116,10 +117,10 @@ namespace WeAreTheChampions
         #endregion
 
         private System.Windows.Forms.Button btnYeniTakimEkleIptal;
-        private System.Windows.Forms.ComboBox cboTakimRenkDuzenle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTakimDuzenle;
         private System.Windows.Forms.TextBox txtTakimIsmiDuzenle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox chkTakimDuzenleRenk;
     }
 }
