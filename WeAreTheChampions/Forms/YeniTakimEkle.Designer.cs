@@ -34,7 +34,8 @@ namespace WeAreTheChampions
             this.btnYeniTakimEkle = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnYeniTakimEkleIptal = new System.Windows.Forms.Button();
-            this.chkListRenkler = new System.Windows.Forms.CheckedListBox();
+            this.cboTakimEkleRenk = new System.Windows.Forms.ComboBox();
+            this.chkTakimRengiVar = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@ namespace WeAreTheChampions
             // 
             // btnYeniTakimEkle
             // 
-            this.btnYeniTakimEkle.Location = new System.Drawing.Point(17, 348);
+            this.btnYeniTakimEkle.Location = new System.Drawing.Point(17, 158);
             this.btnYeniTakimEkle.Name = "btnYeniTakimEkle";
             this.btnYeniTakimEkle.Size = new System.Drawing.Size(213, 30);
             this.btnYeniTakimEkle.TabIndex = 2;
@@ -67,7 +68,7 @@ namespace WeAreTheChampions
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 70);
+            this.label2.Location = new System.Drawing.Point(14, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
@@ -76,7 +77,7 @@ namespace WeAreTheChampions
             // 
             // btnYeniTakimEkleIptal
             // 
-            this.btnYeniTakimEkleIptal.Location = new System.Drawing.Point(236, 348);
+            this.btnYeniTakimEkleIptal.Location = new System.Drawing.Point(236, 158);
             this.btnYeniTakimEkleIptal.Name = "btnYeniTakimEkleIptal";
             this.btnYeniTakimEkleIptal.Size = new System.Drawing.Size(117, 30);
             this.btnYeniTakimEkleIptal.TabIndex = 5;
@@ -84,22 +85,32 @@ namespace WeAreTheChampions
             this.btnYeniTakimEkleIptal.UseVisualStyleBackColor = true;
             this.btnYeniTakimEkleIptal.Click += new System.EventHandler(this.btnYeniTakimEkleIptal_Click);
             // 
-            // chkListRenkler
+            // cboTakimEkleRenk
             // 
-            this.chkListRenkler.CheckOnClick = true;
-            this.chkListRenkler.FormattingEnabled = true;
-            this.chkListRenkler.Location = new System.Drawing.Point(18, 103);
-            this.chkListRenkler.Name = "chkListRenkler";
-            this.chkListRenkler.Size = new System.Drawing.Size(335, 235);
-            this.chkListRenkler.TabIndex = 8;
-            this.chkListRenkler.SelectedIndexChanged += new System.EventHandler(this.chkListRenkler_SelectedIndexChanged);
+            this.cboTakimEkleRenk.FormattingEnabled = true;
+            this.cboTakimEkleRenk.Location = new System.Drawing.Point(18, 114);
+            this.cboTakimEkleRenk.Name = "cboTakimEkleRenk";
+            this.cboTakimEkleRenk.Size = new System.Drawing.Size(335, 28);
+            this.cboTakimEkleRenk.TabIndex = 6;
+            // 
+            // chkTakimRengiVar
+            // 
+            this.chkTakimRengiVar.AutoSize = true;
+            this.chkTakimRengiVar.Location = new System.Drawing.Point(18, 64);
+            this.chkTakimRengiVar.Name = "chkTakimRengiVar";
+            this.chkTakimRengiVar.Size = new System.Drawing.Size(160, 24);
+            this.chkTakimRengiVar.TabIndex = 7;
+            this.chkTakimRengiVar.Text = "Takım Rengi Var";
+            this.chkTakimRengiVar.UseVisualStyleBackColor = true;
+            this.chkTakimRengiVar.CheckedChanged += new System.EventHandler(this.chkTakimRengiVar_CheckedChanged);
             // 
             // YeniTakimEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 393);
-            this.Controls.Add(this.chkListRenkler);
+            this.ClientSize = new System.Drawing.Size(365, 194);
+            this.Controls.Add(this.chkTakimRengiVar);
+            this.Controls.Add(this.cboTakimEkleRenk);
             this.Controls.Add(this.btnYeniTakimEkleIptal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnYeniTakimEkle);
@@ -124,6 +135,7 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Button btnYeniTakimEkle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnYeniTakimEkleIptal;
-        private System.Windows.Forms.CheckedListBox chkListRenkler;
+        private System.Windows.Forms.ComboBox cboTakimEkleRenk;
+        private System.Windows.Forms.CheckBox chkTakimRengiVar;
     }
 }

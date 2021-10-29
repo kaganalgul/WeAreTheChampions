@@ -22,33 +22,37 @@ namespace WeAreTheChampions
         {
             _db = db;
             InitializeComponent();
-            chkListRenkler.DataSource = _db.Colors.Select(x => new TeamColorDTO() { ColorId = x.Id, ColorName = x.ColorName }).ToList();
-            chkListRenkler.DisplayMember = "ColorName";
-            chkListRenkler.ValueMember = "Id";
-
+            cboTakimEkleRenk.DataSource = _db.Colors.Select(x => new TeamColorDTO() { ColorId = x.Id, ColorName = x.ColorName }).ToList();
+            cboTakimEkleRenk.DisplayMember = "ColorName";
+            cboTakimEkleRenk.ValueMember = "Id";
+            cboTakimEkleRenk.Enabled = false;
         }
 
         private void btnYeniTakimEkle_Click(object sender, EventArgs e)
-        {
+        {            
             if (_db.Teams.Any(x => x.TeamName.Equals(txtTakimIsmi.Text)))
             {
                 MessageBox.Show("Bu takım daha önce kaydedilmiş");
                 return;
             }
 
-            if (chkListRenkler.CheckedItems.Count == 0)
+            if (cboTakimEkleRenk.Enabled == true)
             {
-                _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text });
+                TeamColorDTO teamColorDTO = (TeamColorDTO)cboTakimEkleRenk.SelectedItem;
+                TeamColor teamColor = _db.TeamColors.FirstOrDefault(x => x.ColorId.Equals(teamColorDTO.Id));
+                List<TeamColor> teamColors = new List<TeamColor>();
+                teamColors.Add(teamColor);
+                _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text, TeamColors = teamColors });
                 _db.SaveChanges();
-                Close();
             }
 
             else
             {
-                _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text, TeamColors = teamColorsList });
+                _db.Teams.Add(new Team() { TeamName = txtTakimIsmi.Text });
                 _db.SaveChanges();
-                Close();
             }
+
+            Close();
         }
 
         private void btnYeniTakimEkleIptal_Click(object sender, EventArgs e)
@@ -56,14 +60,15 @@ namespace WeAreTheChampions
             Close();
         }
 
-        private void chkListRenkler_SelectedIndexChanged(object sender, EventArgs e)
+        private void chkTakimRengiVar_CheckedChanged(object sender, EventArgs e)
         {
-            TeamColorDTO teamColorDTO = (TeamColorDTO)chkListRenkler.SelectedItem;
-            TeamColor teamColor = _db.TeamColors.FirstOrDefault(x => x.ColorId.Equals(teamColorDTO.ColorId));
-            teamColorsList.Add(teamColor);
-            if (chkListRenkler.CheckedItems.Count != 0)
+            if (chkTakimRengiVar.Checked == true)
             {
-                _db.TeamColors.Add(teamColor);
+                cboTakimEkleRenk.Enabled = true;
+            }
+            else
+            {
+                cboTakimEkleRenk.Enabled = false;
             }
         }
     }
