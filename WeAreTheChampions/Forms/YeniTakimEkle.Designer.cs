@@ -34,8 +34,8 @@ namespace WeAreTheChampions
             this.btnYeniTakimEkle = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnYeniTakimEkleIptal = new System.Windows.Forms.Button();
-            this.cboTakimEkleRenk = new System.Windows.Forms.ComboBox();
             this.chkTakimRengiVar = new System.Windows.Forms.CheckBox();
+            this.chkTakimEkleRenk = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +57,7 @@ namespace WeAreTheChampions
             // 
             // btnYeniTakimEkle
             // 
-            this.btnYeniTakimEkle.Location = new System.Drawing.Point(17, 158);
+            this.btnYeniTakimEkle.Location = new System.Drawing.Point(17, 341);
             this.btnYeniTakimEkle.Name = "btnYeniTakimEkle";
             this.btnYeniTakimEkle.Size = new System.Drawing.Size(213, 30);
             this.btnYeniTakimEkle.TabIndex = 2;
@@ -77,21 +77,13 @@ namespace WeAreTheChampions
             // 
             // btnYeniTakimEkleIptal
             // 
-            this.btnYeniTakimEkleIptal.Location = new System.Drawing.Point(236, 158);
+            this.btnYeniTakimEkleIptal.Location = new System.Drawing.Point(236, 341);
             this.btnYeniTakimEkleIptal.Name = "btnYeniTakimEkleIptal";
             this.btnYeniTakimEkleIptal.Size = new System.Drawing.Size(117, 30);
             this.btnYeniTakimEkleIptal.TabIndex = 5;
             this.btnYeniTakimEkleIptal.Text = "İptal";
             this.btnYeniTakimEkleIptal.UseVisualStyleBackColor = true;
             this.btnYeniTakimEkleIptal.Click += new System.EventHandler(this.btnYeniTakimEkleIptal_Click);
-            // 
-            // cboTakimEkleRenk
-            // 
-            this.cboTakimEkleRenk.FormattingEnabled = true;
-            this.cboTakimEkleRenk.Location = new System.Drawing.Point(18, 114);
-            this.cboTakimEkleRenk.Name = "cboTakimEkleRenk";
-            this.cboTakimEkleRenk.Size = new System.Drawing.Size(335, 28);
-            this.cboTakimEkleRenk.TabIndex = 6;
             // 
             // chkTakimRengiVar
             // 
@@ -102,15 +94,22 @@ namespace WeAreTheChampions
             this.chkTakimRengiVar.TabIndex = 7;
             this.chkTakimRengiVar.Text = "Takım Rengi Var";
             this.chkTakimRengiVar.UseVisualStyleBackColor = true;
-            this.chkTakimRengiVar.CheckedChanged += new System.EventHandler(this.chkTakimRengiVar_CheckedChanged);
+            // 
+            // chkTakimEkleRenk
+            // 
+            this.chkTakimEkleRenk.FormattingEnabled = true;
+            this.chkTakimEkleRenk.Location = new System.Drawing.Point(18, 114);
+            this.chkTakimEkleRenk.Name = "chkTakimEkleRenk";
+            this.chkTakimEkleRenk.Size = new System.Drawing.Size(335, 214);
+            this.chkTakimEkleRenk.TabIndex = 8;
             // 
             // YeniTakimEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 194);
+            this.ClientSize = new System.Drawing.Size(365, 384);
+            this.Controls.Add(this.chkTakimEkleRenk);
             this.Controls.Add(this.chkTakimRengiVar);
-            this.Controls.Add(this.cboTakimEkleRenk);
             this.Controls.Add(this.btnYeniTakimEkleIptal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnYeniTakimEkle);
@@ -135,7 +134,7 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Button btnYeniTakimEkle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnYeniTakimEkleIptal;
-        private System.Windows.Forms.ComboBox cboTakimEkleRenk;
         private System.Windows.Forms.CheckBox chkTakimRengiVar;
+        private System.Windows.Forms.CheckedListBox chkTakimEkleRenk;
     }
 }
